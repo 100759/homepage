@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=fuheng-home"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=homepage"
   },
   "devDependencies": {
     "typescript": "^5.6.3",
