@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="付恒（Fu Heng）的个人主页 — 开发者与造物者。站点、作品与工具的入口，跑在 Cloudflare 的边缘上。Personal homepage of Fu Heng — developer & maker." />
+    <link rel="canonical" href="https://fuheng.vip" />
+    <title>付恒 / Fu Heng</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply theme before paint to avoid flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('fuheng.theme');
+          if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (_) { /* noop */ }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Skip navigation for keyboard / screen-reader users -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Animated ambient gradient orbs — pure CSS, zero JS -->
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="bg-blob bg-blob--1"></span>
+      <span class="bg-blob bg-blob--2"></span>
+      <span class="bg-blob bg-blob--3"></span>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="page">
+      <!-- Top bar -->
+      <header class="bar bar--top">
+        <a href="#home" class="brand" data-view="home">
+          <span class="brand__glyph">付</span>
+          <span class="brand__latin">Fu Heng</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#sites" class="nav__link" data-view="sites">
+            <em>01</em><span data-i18n="nav.sites">Sites</span>
+          </a>
+          <a href="#works" class="nav__link" data-view="works">
+            <em>02</em><span data-i18n="nav.works">Works</span>
+          </a>
+          <a href="#info" class="nav__link" data-view="info">
+            <em>03</em><span data-i18n="nav.info">Info</span>
+          </a>
+          <button class="icon-btn" id="themeToggle" aria-label="Switch to light theme">
+            <svg class="icon icon--moon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <path d="M11.5 8.5A4.5 4.5 0 0 1 5.5 2.5 4.5 4.5 0 1 0 11.5 8.5Z" fill="currentColor"/>
+            </svg>
+            <svg class="icon icon--sun" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <circle cx="7" cy="7" r="2.6" fill="currentColor"/>
+              <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+                <line x1="7" y1="0.8" x2="7" y2="2.4"/>
+                <line x1="7" y1="11.6" x2="7" y2="13.2"/>
+                <line x1="0.8" y1="7" x2="2.4" y2="7"/>
+                <line x1="11.6" y1="7" x2="13.2" y2="7"/>
+                <line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/>
+                <line x1="10.3" y1="10.3" x2="11.4" y2="11.4"/>
+                <line x1="2.6" y1="11.4" x2="3.7" y2="10.3"/>
+                <line x1="10.3" y1="3.7" x2="11.4" y2="2.6"/>
+              </g>
+            </svg>
+          </button>
+          <button class="lang" id="langToggle" aria-label="Language: EN. Switch to Chinese">
+            <span class="lang__track">
+              <span>EN</span>
+              <span>中</span>
+            </span>
+          </button>
+          <button class="icon-btn icon-btn--help" id="helpToggle" aria-label="Keyboard shortcuts" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <circle cx="6" cy="6" r="5"/>
+              <path d="M4.5 4.5C4.5 3.67 5.17 3 6 3s1.5.67 1.5 1.5C7.5 5.5 6 5.75 6 7"/>
+              <circle cx="6" cy="9" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      <!-- Views -->
+      <section class="views" id="main-content">
+        <!-- Home -->
+        <article class="view view--home is-active" data-view="home" aria-labelledby="heading-home">
+          <div class="home">
+            <p class="home__tag" data-i18n="home.tag">— Developer · Maker</p>
+            <h1 id="heading-home" class="home__title">
+              <span data-i18n="home.line1">What the mind imagines,</span>
+              <span class="italic" data-i18n="home.line2">the hands make real.</span>
+            </h1>
+            <p class="home__lede" data-i18n="home.lede">
+              No traffic goals, no trends to chase. Just the things I make, gathered in one quiet place.
+            </p>
+            <div class="home__cta">
+              <a href="#sites" class="cta" data-view="sites">
+                <span data-i18n="home.cta">Enter sites</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                  <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1" fill="none"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sites -->
+        <article class="view view--sites" data-view="sites" aria-labelledby="heading-sites">
+          <header class="view__head">
+            <em>01 / <span data-i18n="nav.sites">Sites</span></em>
+            <h2 id="heading-sites" data-i18n="sites.title">My sites</h2>
+            <p data-i18n="sites.lede">Subdomains running on fuheng.vip.</p>
+          </header>
+          <div class="sites" id="sitesList"></div>
+        </article>
+
+        <!-- Works -->
+        <article class="view view--works" data-view="works" aria-labelledby="heading-works">
+          <header class="view__head">
+            <em>
+              02 / <span data-i18n="nav.works">Works</span>
+              <span class="view__count"><b id="worksCount">3</b> <span data-i18n="works.count">projects</span></span>
+            </em>
+            <h2 id="heading-works" data-i18n="works.title">Selected</h2>
+            <p data-i18n="works.lede">A small set of things I keep alive on the web.</p>
+          </header>
+          <ol class="works" id="worksList"></ol>
+        </article>
+
+        <!-- Info -->
+        <article class="view view--info" data-view="info" aria-labelledby="heading-info">
+          <header class="view__head">
+            <em>03 / <span data-i18n="nav.info">Info</span></em>
+            <h2 id="heading-info" data-i18n="info.title">Hello — 你好</h2>
+          </header>
+          <div class="info">
+            <p data-i18n="info.p1">A small, always-on-desk portal. Nothing to read, just a door to what I make.</p>
+            <p data-i18n="info.p2">Built with TypeScript and Vite. Running on Cloudflare&rsquo;s edge.</p>
+            <dl class="info__links" id="infoLinks"></dl>
+          </div>
+        </article>
+      </section>
+
+      <!-- Bottom bar -->
+      <footer class="bar bar--bottom">
+        <span class="meta" data-i18n="meta.loc">Asia · 2026</span>
+        <span class="meta meta--clock" id="clock" aria-hidden="true">— —</span>
+        <span class="meta meta--badge" aria-hidden="true"><span class="dot"></span> v0.2</span>
+      </footer>
+    </main>
+
+    <!-- Toast for copy feedback -->
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Keyboard shortcuts overlay -->
+    <div class="shortcuts-overlay" id="shortcutsOverlay" aria-hidden="true" role="dialog" aria-label="Keyboard shortcuts" aria-modal="true">
+      <div class="shortcuts-panel" id="shortcutsPanel">
+        <div class="shortcuts-head">
+          <span class="shortcuts-title" data-i18n="shortcuts.title">Keyboard shortcuts</span>
+          <button class="shortcuts-close" id="shortcutsClose" aria-label="Close shortcuts">
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <dl class="shortcuts-list">
+          <dt><kbd>W</kbd></dt><dd data-i18n="nav.works">Works</dd>
+          <dt><kbd>S</kbd></dt><dd data-i18n="nav.sites">Sites</dd>
+          <dt><kbd>I</kbd></dt><dd data-i18n="nav.info">Info</dd>
+          <dt><kbd>H</kbd> / <kbd>Esc</kbd></dt><dd data-i18n="shortcuts.home">Home</dd>
+          <dt><kbd>T</kbd></dt><dd data-i18n="shortcuts.theme">Toggle theme</dd>
+          <dt><kbd>L</kbd></dt><dd data-i18n="shortcuts.lang">Toggle language</dd>
+          <dt><kbd>?</kbd></dt><dd data-i18n="shortcuts.help">This panel</dd>
+        </dl>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
